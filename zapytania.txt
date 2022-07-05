@@ -1,0 +1,59 @@
+--1.wszyskie samochody z garazu nr 1, rokiem produkcji w lub po 2020 oraz statusem free
+SELECT model, make, status.name, car.status_id
+FROM CAR
+JOIN status ON car.status_id = status.id
+WHERE car.garage_id = 1 AND car.year_production>=2020 AND car.status_id=1;
+
+
+
+--1.wszystkie aktualnie naprawiane samochody o kolorze niebieskim
+SELECT car.make, car.model, car.id
+from car
+join car_color ON car_color.car_id = car.id
+WHERE car_color.color_id = (
+    SELECT id
+    FROM color
+    WHERE color.name = 'BLUE'
+) AND status_id = 3;
+
+
+
+--2.imie i nazwisko mechanikow z garazu w ktorym znajudje sie audi RS7
+SELECT NAME, SURNAME
+FROM PERSON 
+INNER JOIN mechanic ON mechanic.person_id=person.id
+WHERE garage_id = (
+    SELECT garage_id
+    FROM car
+    WHERE car.model='RS7'
+);
+
+
+--3.imie, nazwisko id id klienta oraz marka i model wypozyczanego przez niego samochodu
+SELECT  a.name, a.surname, a.id, car.make, car.model
+FROM person a, car, reservation_cars
+WHERE a.id = (
+    SELECT client_person_id
+    FROM reservation b
+    WHERE a.id = b.client_person_id AND car.id = reservation_cars.cars_id
+    AND b.id = reservation_cars.reservation_id
+);
+
+--4.zwiększ pensje wszyskim mechanikom Z imieniem zaczynajacym sie na litere B z garazu pierwszego do - 6000
+UPDATE mechanic
+SET salary_mechanic=6000
+WHERE person_id = (
+    SELECT person.id
+    FROM PERSON
+    WHERE person.name LIKE 'B%'
+) 
+    AND garage_id=1; 
+    
+
+--5.usuwa samochod z najwiekszym przebiegiem
+DELETE
+FROM car
+WHERE mileage = (
+    select MAX(mileage)
+    FROM car 
+);

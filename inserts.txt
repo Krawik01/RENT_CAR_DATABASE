@@ -1,0 +1,74 @@
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (1,'Michal', 'Stulej',52090383464,708708565,'michal.stulej@gmail.com');
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (2,'Tadeusz', 'Norek',50100164151,608591961,'tadeusz.norek@gmail.com');
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (3,'Bartosz', 'Kmiecik',02250883527,796062448,'kmiecik@gmail.com');
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (10,'Amelia', 'Rej',70010899556,679953018,'rej@gmail.com');
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (11,'Ewelina', 'Siedlec',73091231495,791861024,'siedlec@gmail.com');
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (12,'Pawel', 'Bienko',64082119762,791861024,'bienko@gmail.com');
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (13,'Tomasz', 'Krasucki',84071216122,728755616,'krasucki@gmail.com');
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (14,'Seweryn', 'Michalik',54053145894,516525120,'michalik@gmail.com');
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (20,'Paulina', 'Kwiat',47040563944,708708565,'kwiat@gmail.com');
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (21,'Julia', 'Rydz',61042284166,795655990,'rydz@gmail.com');
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (22,'Jan', 'Krol',65070155881,662890353,'krol@gmail.com');
+INSERT INTO PERSON (id, name, surname, pesel, phone_number, email) VALUES (23,'Monika', 'Bartoszek',05281553537,671428461,'bartoszek@gmail.com');
+
+INSERT INTO STATUS (id,name) VALUES (1,'free');
+INSERT INTO STATUS (id,name) VALUES (1,'hired');
+INSERT INTO STATUS (id,name) VALUES (1,'repaired');
+
+
+
+INSERT INTO STATUS (id,name) VALUES (1,'free');
+INSERT INTO STATUS (id,name) VALUES (2,'hired');
+INSERT INTO STATUS (id,name) VALUES (3,'repaired');
+INSERT INTO STATUS (id,name) VALUES (4,'rusty');
+
+
+INSERT INTO GARAGE VALUES (1,2022,'THE BEST',1000);
+INSERT INTO GARAGE VALUES (2,2010,'MEDIUM',500);
+INSERT INTO GARAGE VALUES (3,2005,'WORST',200);
+
+
+INSERT INTO CAR (id,garage_id,model,make,year_production,engine_capacity,mileage,cost_day,deposit,status_id) VALUES (1,1,'M3','BMW',2018,2,20000,700,3000,1);
+INSERT INTO CAR (id,garage_id,model,make,year_production,engine_capacity,mileage,cost_day,deposit,status_id) VALUES (2,1,'RS7','AUDI',2022,3,5000,1500,5000,3);
+INSERT INTO CAR (id,garage_id,model,make,year_production,engine_capacity,mileage,cost_day,deposit,status_id) VALUES (3,2,'126','FIAT',1995,1,150000,300,500,2);
+INSERT INTO CAR (id,garage_id,model,make,year_production,engine_capacity,mileage,cost_day,deposit,status_id) VALUES (4,1,'HURACANE','LAMBO',2020,4,10000,2000,5000,1);
+INSERT INTO CAR (id,garage_id,model,make,year_production,engine_capacity,mileage,cost_day,deposit,status_id) VALUES (5,2,'COROLLA','TOYOTA',2017,2,30000,600,500,3);
+INSERT INTO CAR (id,garage_id,model,make,year_production,engine_capacity,mileage,cost_day,deposit,status_id) VALUES (6,2,'FORD','MONDEO',2005,2,300000,500,300,3);
+INSERT INTO CAR (id,garage_id,model,make,year_production,engine_capacity,mileage,cost_day,deposit,status_id) VALUES (10,2,'MULTIPLA','FIAT',2001,2,500000,50,100,4);
+
+INSERT INTO MECHANIC VALUES (12,1,5000);
+INSERT INTO MECHANIC VALUES (8,2,3000);
+INSERT INTO MECHANIC VALUES (2,2,3500);
+INSERT INTO MECHANIC VALUES (3,1,4500);
+
+INSERT INTO CLIENT VALUES (21,1);
+INSERT INTO CLIENT VALUES (23,2);
+INSERT INTO CLIENT VALUES (22,3);
+INSERT INTO CLIENT VALUES(1,4);
+
+INSERT INTO WORKER VALUES (20,3000);
+INSERT INTO WORKER VALUES (13,4000);
+INSERT INTO WORKER VALUES (11,8000);
+INSERT INTO WORKER VALUES (10,3500);
+
+
+INSERT INTO RESERVATION VALUES(1,1,2022,2023);
+INSERT INTO RESERVATION_MECHANIC VALUES(1,12);
+
+INSERT INTO RESERVATION VALUES(2,21,2022,2023);
+INSERT INTO RESERVATION_MECHANIC VALUES(2,3);
+
+INSERT INTO RESERVATION_CARS VALUES(1,1);
+INSERT INTO RESERVATION_CARS VALUES(4,2);
+
+INSERT INTO COLOR VALUES (1,'BLACK');
+INSERT INTO COLOR VALUES (2,'WHITE');
+INSERT INTO COLOR VALUES (3,'BLUE');
+INSERT INTO COLOR VALUES (4,'YELLOW');
+
+INSERT INTO CAR_COLOR VALUES (1,1);
+INSERT INTO CAR_COLOR VALUES (2,2);
+INSERT INTO CAR_COLOR VALUES (3,3);
+INSERT INTO CAR_COLOR VALUES (4,4);
+INSERT INTO CAR_COLOR VALUES (3,5);
+INSERT INTO CAR_COLOR VALUES (1,6);
